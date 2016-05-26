@@ -1,0 +1,22 @@
+extends /layout
+
+block content
+    div.page-header
+        h3= i18n.__('Todos')
+
+    form.form-horizontal(action='/', method='POST')
+        .form-group
+            .col-sm-12
+                label.control-label(for='desc') Desc
+            .col-sm-12
+                input.form-control(name='desc', type="text")
+
+        .form-group
+            .col-sm-12
+                button.btn.btn.btn-primary(type='submit')
+                  i.fa.fa-pencil
+                  = i18n.__('Add')
+
+    ol
+        each todo in todos.reverse()
+            li=todo.desc
