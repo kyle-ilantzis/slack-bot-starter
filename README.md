@@ -8,10 +8,29 @@ The webserver is using [express](http://expressjs.com/) with [jade](http://jade-
 
 The database is [postgresql](http://www.postgresql.org/) using [knex](http://knexjs.org/) for interfacing with postgresql.
 
-# Usage
+# Installation
 
-Git clone this repo and configure your the [.env](.env) file.
-See [.env.example](.env.example) for more details.
+Git clone this repo
+
+    $> git clone git@github.com:kyle-ilantzis/slack-bot-starter.git my-bot
+
+Copy [.env.example](.env.example) to the **.env** file
+
+    $> cp .env.example .env
+
+Edit the **.env** file with your slack api token and postgres credentials
+
+    SLACK_API_TOKEN=xoxb-00000000000-ABCDEFGHIJKLMNOP
+    POSTGRES_URL=postgres://username:password@host:port/mybot
+
+Install dependencies
+
+    $> npm install
+
+Create the database tables
+
+    $> npm install -g knex
+    $> knex migrate:latest
 
 Run the app
 
@@ -24,6 +43,14 @@ This starter kit starts with the most basic todo application. A webserver at loc
 The bot can be told "todos" and then lists all todos on slack.
 
 You are now ready to code your bot!
+
+** Web server **
+
+![todo-webserver](todo-webserver.png)
+
+** Slack bot **
+
+![todo-slackbot](todo-slackbot.png)
 
 # How to
 
